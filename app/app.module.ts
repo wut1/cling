@@ -1,14 +1,16 @@
-import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
+import { NgModule } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
-import { BarcodeScanner } from "nativescript-barcodescanner";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { NativeScriptHttpModule } from "nativescript-angular/http";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 import { AppComponent } from "./app.component";
+
+import { routes } from "./app.routing";
 
 @NgModule({
   declarations: [AppComponent],
   bootstrap: [AppComponent],
-  imports: [NativeScriptModule],
-  schemas: [NO_ERRORS_SCHEMA],
-  providers:[BarcodeScanner]
+  imports: [NativeScriptModule,NativeScriptFormsModule,NativeScriptHttpModule,NativeScriptRouterModule.forRoot(routes)]
 })
 export class AppModule {}
