@@ -1,11 +1,8 @@
 import { Component } from "@angular/core";
 @Component({
-  selector: "my-app",
+  selector: "app",
   template: `
-  <StackLayout class="p-20">
-      <Label text="barcode Scanner" class="h1 text-center"></Label>
-      <Button text="SCAN" (tap)="onScan()" class="btn btn-primary btn-active"></Button>
-  </StackLayout>
+  <page-router-outlet></page-router-outlet>
   `
 })
 export class AppComponent {

@@ -1,12 +1,8 @@
 import { HomeComponent } from './home/home.component';
-import { Routes, RouterModule }  from '@angular/router';
 import { PagesComponent } from './pages.component';
-import { ModuleWithProviders } from '@angular/core';
-// noinspection TypeScriptValidateTypes
-
-// export function loadChildren(path) { return System.import(path); };
-
-export const routes: Routes = [
+import { ModuleWithProviders } from "@angular/core";
+import { NativeScriptRouterModule } from "nativescript-angular/router";
+export const routes = [
   {
     path: 'pages',
     component: PagesComponent,
@@ -17,4 +13,4 @@ export const routes: Routes = [
   }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forChild(routes);
+export const routing: ModuleWithProviders = NativeScriptRouterModule.forChild(routes);

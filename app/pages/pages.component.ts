@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { FlexboxLayout } from "tns-core-modules/ui/layouts/flexbox-layout";
 @Component({
     selector: 'pages',
-    templateUrl: './pages.component.html'
+    styleUrls:['pages/pages.css'],
+    templateUrl:'pages/pages.html'
 })
-export class PagesComponent implements OnInit {
+export class PagesComponent {
     constructor() { }
-
-    ngOnInit() { }
 }

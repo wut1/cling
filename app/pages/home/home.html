@@ -1,0 +1,21 @@
+<FlexboxLayout flexDirection="column" justifyContent="space-between">
+    <SearchBar hint="输入搜索内容" [text]="searchPhrase" (textChange)="onTextChanged($event)" (clear)="onClear($event)" (submit)="onSubmit($event)" color="white" textFieldBackgroundColor="white" textFieldHintColor="#eee">
+    </SearchBar>
+    <ScrollView sdkExampleTitle sdkToggleNavButton (loaded)="onScrollLoaded($event)" (scroll)="onScroll($event)">
+        <ListView [items]="arrayItems" class="list-group">
+            <ng-template let-item="item">
+                <StackLayout>
+                    <StackLayout>
+                        <Image [src]="item.user.avatar"></Image>
+                        <Label [text]="item.user.name"></Label>
+                        <Label [text]="item.time"></Label>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label [text]="item.title" class="title"></Label>
+                        <Label [text]="item.content" class="content" whiteSpace="normal"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </ng-template>
+        </ListView>
+    </ScrollView>
+</FlexboxLayout>
