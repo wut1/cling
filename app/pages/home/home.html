@@ -1,6 +1,7 @@
-<FlexboxLayout flexDirection="column" justifyContent="space-between">
-    <SearchBar hint="输入搜索内容" [text]="searchPhrase" (textChange)="onTextChanged($event)" (clear)="onClear($event)" (submit)="onSubmit($event)" color="white" textFieldBackgroundColor="white" textFieldHintColor="#eee">
-    </SearchBar>
+<DockLayout stretchLastChild="true">
+    <StackLayout dock="top" (tap)="toSearch()" class="search-layout" orientation="vertical">
+        <Label text="占位"></Label>
+    </StackLayout>
     <ScrollView sdkExampleTitle sdkToggleNavButton (loaded)="onScrollLoaded($event)" (scroll)="onScroll($event)">
         <ListView [items]="arrayItems" class="list-group">
             <ng-template let-item="item">
@@ -8,9 +9,9 @@
                     <StackLayout>
                         <Image [src]="item.user.avatar"></Image>
                         <Label [text]="item.user.name"></Label>
-                        <Label [text]="item.time"></Label>
+                        <Label [text]="item.time|momentTime"></Label>
                     </StackLayout>
-                    <StackLayout>
+                    <StackLayout (tap)="toDetail(item.id)">
                         <Label [text]="item.title" class="title"></Label>
                         <Label [text]="item.content" class="content" whiteSpace="normal"></Label>
                     </StackLayout>
@@ -18,4 +19,4 @@
             </ng-template>
         </ListView>
     </ScrollView>
-</FlexboxLayout>
+</DockLayout>

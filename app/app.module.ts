@@ -4,6 +4,7 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
+import {topmost} from "ui/frame";
 
 import { PagesModule } from './pages/pages.module';
 import { AppComponent } from "./app.component";
@@ -27,4 +28,8 @@ import {httpFactory} from "./shared/http.interceptor";
     deps: [XHRBackend, RequestOptions]
 }]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(){
+    topmost().android.showActionBar = false;//取消actionbar
+  }
+}

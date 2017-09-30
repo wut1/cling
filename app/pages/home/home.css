@@ -1,8 +1,10 @@
-ScrollView {
-    height: 400;
-}
-
 Image {
     height: 20;
     width: 20;
+}
+
+.search-layout {
+    height: 40;
+    line-height: 40;
+    width: 100%;
 }

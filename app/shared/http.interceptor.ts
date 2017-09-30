@@ -65,7 +65,8 @@ export class InterceptedHttp extends Http {
     }
 
     private updateUrl(req: string) {
-        let env = 'http://192.168.16.77:3000'
+        //let env = 'http://192.168.16.77:3000'
+        let env = 'http://www.chex.site:3000'
         return env+req;  
     }
 
